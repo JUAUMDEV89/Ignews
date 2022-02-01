@@ -13,19 +13,22 @@ export function Subscribe (){
             return;
          }
 
-         try{
+        try{
              const response = await api.post('/subscribe');
              
              const { sessionId } = response.data;
+             
+              console.log(sessionId)
 
              const stripe = await getStripeJs();
              
              await stripe.redirectToCheckout({ sessionId });
+        
+        }catch(err){
+            console.log(err.message)
+        }
 
-
-         }catch(err){
-           console.log(err.message)
-         }
+         
     }
 
     return(
