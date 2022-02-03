@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 import { SignInButton } from '../SignInButton';
 
 import styles from './styles.module.scss';
@@ -11,11 +13,15 @@ export function Header(){
 
                 <nav>
                     <div>
-                        <span>Home</span>
+                        <Link href="/">
+                            <a>Home</a>
+                        </Link>
                     </div>
 
                     <div>
-                        <span>Posts</span>
+                        <Link href="/posts" prefetch>
+                            <a>Posts</a>
+                        </Link>
                     </div>
                 </nav>
              </div>

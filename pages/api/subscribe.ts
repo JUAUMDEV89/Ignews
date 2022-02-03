@@ -59,14 +59,14 @@ export default async(req: NextApiRequest, res: NextApiResponse) => {
                  }],
                  mode: 'subscription',
                  allow_promotion_codes: true,
-                 success_url: process.env.STRIPE_SUCCESS_URL,
-                 cancel_url: process.env.STRIPE_CANCEL_URL
+                 success_url: 'http://localhost:3000/posts',
+                 cancel_url: 'http://localhost:3000'
            });
-
            res.status(200).json({ sessionId: StripeChekoutSession.id })
 
     } else{
         res.setHeader('Allow',  'POST');
+        console.log(process.env.STRIPE_SUCCESS_URL)
         res.status(405).end('Method not Allowed')
     }
 }
