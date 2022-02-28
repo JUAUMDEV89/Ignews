@@ -9,7 +9,7 @@ export function Header(){
       <header className={styles.header}>
          <div className={styles.container}>
              <div className={styles.headerLeftMenu}>
-                <img src="./logo.svg" alt="logo" />
+                <img src="../../logo.svg" alt="logo" />
 
                 <nav>
                     <div>
